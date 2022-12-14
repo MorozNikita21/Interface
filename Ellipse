@@ -1,0 +1,22 @@
+import java.math.*;
+public class Ellipse implements Function{
+    double x;
+    double a;
+    double b;
+    Ellipse(double x, double a, double b){
+        this.x = x;
+        this.a = a;
+        this.b = b;
+    }
+    public double F(){
+        if (a > b){
+            return Math.sqrt(b*b*(1-((x*x)/(a*a))));
+        }
+        else {
+            return Math.sqrt(a*a*(1-((x*x)/(b*b))));
+        }
+    }
+    public void print(){
+        System.out.println("Ellipse: ");
+    }
+}
