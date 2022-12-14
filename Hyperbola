@@ -1,0 +1,17 @@
+import java.math.*;
+public class Hyperbola implements Function{
+    double x;
+    double a;
+    double b;
+    Hyperbola(double x, double a, double b){
+        this.x = x;
+        this.a = a;
+        this.b = b;
+    }
+    public double F(){
+        return Math.sqrt(b*b*(((x*x)/(a*a)-1)));
+    }
+    public void print(){
+        System.out.println("Hyperbola: ");
+    }
+}
