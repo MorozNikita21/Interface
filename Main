@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many functions will there be: ");
+        int k = sc.nextInt();
+        Function [] f = new Function[k];
+        for (int i = 0; i < f.length; i++){
+            System.out.println("1 - Ellipse, 2 - Hyperbola");
+            int p = sc.nextInt();
+            if (p==1){
+                System.out.println("Enter the values x, a, b: ");
+                double x = sc.nextInt();
+                double a = sc.nextInt();
+                double b = sc.nextInt();
+                Ellipse e = new Ellipse(x, a, b);
+                f[i] = e;
+            }
+            if (p==2){
+                System.out.println("Enter the values x, a, b: ");
+                double x = sc.nextInt();
+                double a = sc.nextInt();
+                double b = sc.nextInt();
+                Hyperbola h = new Hyperbola(x, a, b);
+                f[i] = h;
+            }
+        }
+        for (int i = 0; i < f.length; i++){
+            f[i].print();
+            System.out.println("F = " + f[i].F());
+        }
+    }
+}
